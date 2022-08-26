@@ -4,19 +4,18 @@ public class Radio {
 
     private int maxRadioStation;
     private int currentRadioStation;
+
     public Radio() {
         maxRadioStation = 9;
 
     }
 
     public Radio(int amountOfRadioStation) {
-        maxRadioStation = amountOfRadioStation -1;
+        maxRadioStation = amountOfRadioStation - 1;
     }
 
 
     private int currentVolume;
-
-
 
 
     public int getCurrentRadioStation() {

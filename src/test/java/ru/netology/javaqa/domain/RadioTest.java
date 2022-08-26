@@ -194,6 +194,7 @@ public class RadioTest {
 
 
     }
+
     @Test
     public void shouldSetNextMaxRadioStationWithCustomAmount() {
         Radio radio = new Radio(100);
@@ -201,12 +202,14 @@ public class RadioTest {
         radio.nextRadioStation();
         assertEquals(0, radio.getCurrentRadioStation());
     }
+
     @Test
     public void shouldSetOverMaxRadioStationWithCustomAmount() {
         Radio radio = new Radio(100);
         radio.setCurrentRadioStation(102);
         assertEquals(0, radio.getCurrentRadioStation());
     }
+
     @Test
     public void shouldSetBelowMinRadioStationWithCustomAmount() {
         Radio radio = new Radio(100);
