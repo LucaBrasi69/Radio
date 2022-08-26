@@ -1,8 +1,22 @@
 package ru.netology.javaqa.domain;
 
 public class Radio {
+
+    private int maxRadioStation;
     private int currentRadioStation;
+
+    public Radio() {
+        maxRadioStation = 9;
+
+    }
+
+    public Radio(int amountOfRadioStation) {
+        maxRadioStation = amountOfRadioStation - 1;
+    }
+
+
     private int currentVolume;
+
 
     public int getCurrentRadioStation() {
         return currentRadioStation;
@@ -12,7 +26,7 @@ public class Radio {
         if (currentRadioStation < 0) {
             return;
         }
-        if (currentRadioStation > 9) {
+        if (currentRadioStation > maxRadioStation) {
             return;
         }
         this.currentRadioStation = currentRadioStation;
@@ -26,7 +40,7 @@ public class Radio {
         if (currentVolume < 0) {
             return;
         }
-        if (currentVolume > 10) {
+        if (currentVolume > 100) {
             return;
         }
         this.currentVolume = currentVolume;
@@ -34,7 +48,7 @@ public class Radio {
 
 
     public void nextRadioStation() {
-        if (currentRadioStation < 9) {
+        if (currentRadioStation < maxRadioStation) {
             currentRadioStation++;
         } else {
             currentRadioStation = 0;
@@ -45,15 +59,15 @@ public class Radio {
         if (currentRadioStation > 0) {
             currentRadioStation--;
         } else {
-            currentRadioStation = 9;
+            currentRadioStation = maxRadioStation;
         }
     }
 
     public void increaseVolume() {
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume++;
         } else {
-            currentVolume = 10;
+            currentVolume = 100;
         }
     }
 
